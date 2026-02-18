@@ -1,20 +1,20 @@
-# 🛒 A/B Testing: E-commerce Landing Page Analysis
+# A/B Testing: E-commerce Landing Page Analysis
 
-## 📌 Project Overview
+## Project Overview
 An e-commerce company developed a new web landing page with the goal of increasing the user conversion rate. Before a full rollout, an A/B test was conducted to determine if the new page (Treatment Group) performs significantly better than the old page (Control Group).
 
 **Final Verdict:** The analysis shows that the new page **did not** outperform the old one. Therefore, the recommendation is to **keep the original page**.
 
 ---
 
-## 🛠️ Technologies & Tools
+## Technologies & Tools
 * **Language:** Python 3
 * **Libraries:** Pandas, NumPy, Statsmodels, Matplotlib, Seaborn.
 * **Technique:** Hypothesis Testing (Z-Test for Proportions), Data Wrangling.
 
 ---
 
-## 🔍 Analysis Workflow
+## Analysis Workflow
 
 ### 1. Data Cleaning (Data Wrangling)
 The original dataset contained approximately 294,000 records. Rigorous cleaning was required to ensure statistical validity:
@@ -36,7 +36,7 @@ To confirm if this difference was statistically significant or just random noise
 
 ---
 
-## 📊 Results
+## Results
 
 | Metric | Value |
 | :--- | :--- |
@@ -49,7 +49,7 @@ This means we **fail to reject the Null Hypothesis**. There is no statistical ev
 
 ---
 
-## 🚀 Business Recommendation
+## Business Recommendation
 Based on the data-driven analysis, the advice to the product team is:
 
 1.  **Do NOT implement the new landing page.** The data does not support the hypothesis that the new design drives more sales.
