@@ -26,7 +26,7 @@ Após a limpeza, as taxas de conversão observadas foram:
 A uma primeira vista, a nova página apresentou um desempenho inferior à original.
 
 ### 3. Validação Estatística
-Aplicou-se um **Z-Test para Proporções** (Unilateral à Direita) com um nível de confiança de 95% ($lpha = 0.05$).
+Aplicou-se um **Z-Test para Proporções** (Unilateral à Direita) com um nível de confiança de 95% ($\alpha = 0.05$).
 
 * **Hipótese Nula ($H_0$):** $p_{novo} \leq p_{antigo}$ (A nova página não é melhor).
 * **Hipótese Alternativa ($H_1$):** $p_{novo} > p_{antigo}$ (A nova página é melhor).
