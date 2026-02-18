@@ -1,52 +1,61 @@
-# 🛑 Teste A/B: Análise de Nova Landing Page de E-commerce
+# 🛒 A/B Testing: E-commerce Landing Page Analysis
 
-## 📋 Sobre o Projeto
-Uma empresa de e-commerce desenvolveu uma nova página de destino (*landing page*) com o objetivo de aumentar a taxa de conversão de vendas. Antes de realizar a mudança global, foi executado um Teste A/B para validar estatisticamente se a nova versão (Grupo de Tratamento) superava a versão antiga (Grupo de Controlo).
+## 📌 Project Overview
+An e-commerce company developed a new web landing page with the goal of increasing the user conversion rate. Before a full rollout, an A/B test was conducted to determine if the new page (Treatment Group) performs significantly better than the old page (Control Group).
 
-**Resultado Final:** A análise indicou que a nova página **não** obteve um desempenho superior, recomendando-se a manutenção da página original.
-
-## 🛠️ Tecnologias Utilizadas
-* **Python:** Linguagem principal.
-* **Pandas:** Limpeza e manipulação de dados (Data Wrangling).
-* **Statsmodels:** Testes estatísticos (Z-Test para proporções).
-* **Matplotlib:** Visualização de dados e Intervalos de Confiança.
-
-## 🔍 O Processo de Análise
-
-### 1. Tratamento de Dados (Data Cleaning)
-O *dataset* original continha cerca de 294.000 registos. Durante a fase de exploração, identificaram-se inconsistências graves:
-* **Mismatch de Grupos:** Foram removidas **3.893 linhas** onde o utilizador do grupo de controlo visualizou a página nova (ou vice-versa), o que invalidaria o teste.
-* **Duplicados:** Remoção de IDs de utilizadores repetidos para garantir a independência das amostras.
-
-### 2. Análise Exploratória
-Após a limpeza, as taxas de conversão observadas foram:
-* **Grupo Controlo (A):** 12.04%
-* **Grupo Tratamento (B):** 11.88%
-
-A uma primeira vista, a nova página apresentou um desempenho inferior à original.
-
-### 3. Validação Estatística
-Aplicou-se um **Z-Test para Proporções** (Unilateral à Direita) com um nível de confiança de 95% ($\alpha = 0.05$).
-
-* **Hipótese Nula ($H_0$):** $p_{novo} \leq p_{antigo}$ (A nova página não é melhor).
-* **Hipótese Alternativa ($H_1$):** $p_{novo} > p_{antigo}$ (A nova página é melhor).
-
-## 📊 Resultados e Conclusão
-
-| Métrica | Valor |
-| :--- | :--- |
-| **Z-Score** | -1.3109 |
-| **P-Valor** | 0.9051 |
-
-### Interpretação
-O **P-Valor de 0.9051** é muito superior ao nível de significância de 0.05. Isto significa que **falhamos em rejeitar a Hipótese Nula**. Não há evidências estatísticas de que a nova página gere mais conversões. Pelo contrário, existe uma probabilidade alta de que o resultado inferior seja apenas fruto do acaso ou que a página seja, de facto, pior.
-
-## 🚀 Recomendação de Negócio
-Com base nos dados, a recomendação estratégica para a direção é:
-
-1.  **Não implementar a nova Landing Page:** A mudança não traria aumento de receita e poderia reduzir ligeiramente a conversão.
-2.  **Manter a Página Atual:** A versão original continua a ser a mais eficiente.
-3.  **Economia de Recursos:** Esta análise evitou o custo de implementação e manutenção de uma funcionalidade ineficiente.
+**Final Verdict:** The analysis shows that the new page **did not** outperform the old one. Therefore, the recommendation is to **keep the original page**.
 
 ---
-*Autor: Agatha Barros*
+
+## 🛠️ Technologies & Tools
+* **Language:** Python 3
+* **Libraries:** Pandas, NumPy, Statsmodels, Matplotlib, Seaborn.
+* **Technique:** Hypothesis Testing (Z-Test for Proportions), Data Wrangling.
+
+---
+
+## 🔍 Analysis Workflow
+
+### 1. Data Cleaning (Data Wrangling)
+The original dataset contained approximately 294,000 records. Rigorous cleaning was required to ensure statistical validity:
+* **Mismatch Removal:** Identified and removed **3,893 records** where the `group` (control/treatment) did not match the expected `landing_page` (old/new).
+* **Duplicate Removal:** Verified and removed duplicate user IDs to ensure independent sampling.
+
+### 2. Exploratory Data Analysis (EDA)
+After cleaning, the observed conversion rates were:
+* **Control Group (A):** 12.04%
+* **Treatment Group (B):** 11.88%
+
+Initial observation suggested that the new page was actually performing slightly worse than the original.
+
+### 3. Statistical Testing
+To confirm if this difference was statistically significant or just random noise, a **One-Tailed Z-Test** was performed with a confidence level of 95% ($\alpha = 0.05$).
+
+* **Null Hypothesis ($H_0$):** $p_{new} \leq p_{old}$ (The new page is not better).
+* **Alternative Hypothesis ($H_1$):** $p_{new} > p_{old}$ (The new page leads to higher conversions).
+
+---
+
+## 📊 Results
+
+| Metric | Value |
+| :--- | :--- |
+| **Z-Score** | -1.3109 |
+| **P-Value** | 0.9051 |
+
+### Interpretation
+The calculated **P-Value (0.9051)** is significantly higher than the alpha level (0.05).
+This means we **fail to reject the Null Hypothesis**. There is no statistical evidence that the new page increases conversions. In fact, the negative Z-score indicates the new page performed worse than the control.
+
+---
+
+## 🚀 Business Recommendation
+Based on the data-driven analysis, the advice to the product team is:
+
+1.  **Do NOT implement the new landing page.** The data does not support the hypothesis that the new design drives more sales.
+2.  **Retain the Old Page:** The original version is currently performing better.
+3.  **Investigate UX Issues:** The design team should review the new page to understand why it failed to engage users.
+
+---
+*Author: Agatha Barros*
+*🇧🇷 [Leia em Português](README_PT.md)*
